@@ -16,8 +16,8 @@ namespace SignUpProject
         int index;
         public Hyrje()
         {
-            Hyrje_Load();
             InitializeComponent();
+            Hyrje_Load();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,13 +33,13 @@ namespace SignUpProject
         private void button2_Click(object sender, EventArgs e)
         {
             if (index > 0)
-                listPanel[--index].BringToFront();
+                ShowForm(--index);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (index < listPanel.Count - 1)
-                listPanel[++index].BringToFront();
+                ShowForm(++index); 
         }
 
         private void SignUp_Click(object sender, EventArgs e)
@@ -58,8 +58,32 @@ namespace SignUpProject
             listPanel.Add(Page1);
             listPanel.Add(Page2);
             listPanel.Add(Page3);
-            listPanel[index].BringToFront();
+            ShowForm(0);
+        }
 
+        private void ShowForm(int index) {
+            foreach (var page in listPanel)
+            {
+                page.Hide();
+                page.SendToBack();
+            }
+            var pageToShow = listPanel[index];
+            pageToShow.Show();
+
+            if (index == listPanel.Count - 1)
+            {
+                nextButton.Hide();
+                prevButton.Show();
+            }
+            else if (index == 0)
+            {
+                nextButton.Show();
+                prevButton.Hide();
+            }
+            else {
+                nextButton.Show();
+                prevButton.Show();
+            }
         }
     }
 }

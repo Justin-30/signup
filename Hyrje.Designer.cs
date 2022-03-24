@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hyrje));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.prevButton = new System.Windows.Forms.Button();
             this.Page2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Page3 = new System.Windows.Forms.Panel();
@@ -45,25 +45,25 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(495, 520);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Next Page";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.nextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton.Location = new System.Drawing.Point(495, 520);
+            this.nextButton.Name = "button1";
+            this.nextButton.Size = new System.Drawing.Size(123, 42);
+            this.nextButton.TabIndex = 0;
+            this.nextButton.Text = "Next Page";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(271, 520);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 42);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Previous Page";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.prevButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prevButton.Location = new System.Drawing.Point(271, 520);
+            this.prevButton.Name = "button2";
+            this.prevButton.Size = new System.Drawing.Size(155, 42);
+            this.prevButton.TabIndex = 2;
+            this.prevButton.Text = "Previous Page";
+            this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // Page2
             // 
@@ -97,7 +97,8 @@
             this.Page3.Location = new System.Drawing.Point(0, 109);
             this.Page3.Name = "Page3";
             this.Page3.Size = new System.Drawing.Size(798, 502);
-            this.Page3.TabIndex = 2;
+            this.Page3.TabIndex = 1;
+            
             // 
             // SignUp
             // 
@@ -129,7 +130,6 @@
             // 
             this.Page1.BackgroundImage = global::SignUpProject.Properties.Resources.Mang_Island_Logo1;
             this.Page1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Page1.Controls.Add(this.Page2);
             this.Page1.Controls.Add(this.label1);
             this.Page1.Location = new System.Drawing.Point(9, 12);
             this.Page1.Name = "Page1";
@@ -154,9 +154,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 603);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.prevButton);
             this.Controls.Add(this.Page1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Page2);
+            this.Controls.Add(this.Page3);
+            this.Controls.Add(this.nextButton);
             this.Name = "Hyrje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hyrje";
@@ -172,10 +174,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Panel Page1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button prevButton;
         private System.Windows.Forms.Panel Page2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Page3;
